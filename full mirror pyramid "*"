@@ -1,0 +1,45 @@
+   #include <iostream>
+using namespace std;
+
+int main() {
+   int i,n,j,e,st,st1,k,k1,i1;
+   cout<<"enter the number";
+   cin>>n;
+   for(i=1;i<=n;i++)
+    
+        {
+            for(j=n;j>i;j--)
+          {  cout<<" ";
+        }
+        for(k=1;k<=i+e;k++)
+        {
+            cout<<"*";
+            st=k;
+        }
+        e++;
+        cout<<"\n";
+   }
+    st1=st-2;
+   //cout<<st1;
+   for(int e1=1,i1=1;i1<=n;i1++,e1=e1+2)
+   {    if(st>st1)
+    {
+        cout<<" ";
+    }
+       for(j=1;j<i1;j++)
+       {
+           cout<<" ";
+       }
+      
+   for(int k1=e1;k1<=st1;k1++)
+   {
+     cout<<"*";
+       
+       }
+       
+
+   
+   cout<<"\n";
+   }
+   
+}

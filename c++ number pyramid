@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int
+main ()
+{
+  int i, n, j, e, st, st1, k, k1, i1;
+  cout << "enter the number";
+  cin >> n;
+  for (i = 1; i <= n; i++)
+
+    {
+      for (j = n; j > i; j--)
+	{
+	  cout << " ";
+	}
+      for (k = i; k <= i + e; k++)
+	{
+	  cout << k;
+	  st = i + e;
+	  st = st - 1;
+	}
+
+
+      for (k1 = st; k1 >= i; k1--)
+	cout << k1;
+      e++;
+      cout << "\n";
+    }
+}

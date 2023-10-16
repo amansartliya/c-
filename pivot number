@@ -1,0 +1,23 @@
+#include<string.h>
+using namespace std;
+int main()
+{
+   
+string a;
+cin>>a;
+int b=a.size();
+
+for(int i=0;i<b;i++)
+    {int s=0;
+        for(int j=0;j<b;j++)
+        {
+            if(a[i]==a[j])
+            {
+            ++s;
+        
+        }
+          
+    }cout<<a[i]<<s;
+    }
+    return 0;
+}

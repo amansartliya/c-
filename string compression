@@ -1,0 +1,28 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+   
+string a;
+cin>>a;
+int b=a.size();
+int j;
+for(int i=0;i<b;)
+    {int s=1;
+    char ch=a[i];
+    j=i+1;
+        for(j=i+1;j<b;j++)
+        {
+            if(ch==a[j])
+            {
+            s++;
+          
+        }
+        else break;
+          
+   } cout<<a[i]<<s;
+    i=j;
+    }
+    return 0;
+}

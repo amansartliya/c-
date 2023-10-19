@@ -1,10 +1,9 @@
-// Online C++ compiler to run C++ program online
-#include <iostream>
+#include<iostream>
 using namespace std;
 class node{
     public:
     int data;
-    node* left,*right;
+    node*left,*right;
     node(int d)
     {
         data=d;
@@ -12,13 +11,11 @@ class node{
     }
 };
 
-node*buildtree()
-{
+node* buildtree(){
     int data;
     cin>>data;
-    if(data== -1) return NULL;
-    
-    node* root=new node(data);
+    if(data ==-1) return NULL;
+    node*root= new node(data);
     root->left=buildtree();
     root->right=buildtree();
     return root;
@@ -30,32 +27,29 @@ void preorder(node*root)
     preorder(root->left);
     preorder(root->right);
 }
-
-void inorder(node*root)
+int countnodes(node*root)
 {
-    if(!root) return;
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
+    return(!root)? 0: countnodes(root->left)+countnodes(root->right)+1;
 }
-void postorder(node*root)
+int height(node*root)
 {
-    if(!root) return;
-    postorder(root->left);
-    postorder(root->right);
-    cout<<root->data<<" ";
+   return (!root)? 0 : max(height(root->left),height(root->right))+1;
 }
-
-int main() {
-   
-   node* root=buildtree();
-   preorder(root);
-   cout<<endl;
-   inorder(root);
-   cout<<endl;
-   postorder(root);
-   cout<<endl;
-   cout<<endl;
-
-    return 0;
+int diameter(node* root)
+{
+    if(!root) return 0;
+    int op1=height(root->left)+height(root->right);
+    int op2=diameter(root->left);
+    int op3=diameter(root->right);
+    return max(op1,max(op2,op3));
+}
+int main()
+{
+    node*root=buildtree();
+    preorder(root);
+    cout<<endl;
+    cout<<"Total number of nodes are:"<<countnodes(root)<<endl;
+    cout<<"height of the tree is:"<<height(root)<<"\n";
+    cout<<"max diameter is:"<<diameter(root);
+      return 0;
 }
